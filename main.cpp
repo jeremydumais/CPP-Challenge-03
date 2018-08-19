@@ -9,20 +9,25 @@ int main(int argc, char const *argv[])
 {
     unsigned int number1 {0};
     unsigned int number2 {0};
-    cout << "Greatest common divisor" << endl;
+    cout << "Least common multiple" << endl;
     number1 = GetInputNumber("Enter the first number : ");
     number2 = GetInputNumber("Enter the second number : ");
 
     //Calculation
-    unsigned int minNumber = min(number1, number2);
-    unsigned int gcd = 1;
-    for(unsigned int i=1;i<=minNumber/2;i++)
+    /*Ex : multiple of 3 are : 3, 6, 9, 12, 15 <- 
+           multiple of 5 are : 5, 10, 15 <-
+    */
+    unsigned int result1 {number1};
+    unsigned int result2 {number2};
+    while(result1 != result2)
     {
-        if (number1 % i == 0 && number2 % i == 0)
-            gcd = i;
+        if (result1 < result2)
+            result1 += number1;
+        if (result2 < result1)
+            result2 += number2;
     }
 
-    cout << "Greatest common divisor of " << number1 << " and " << number2 << " is " << gcd << endl;
+    cout << "Least common multiple of " << number1 << " and " << number2 << " is " << result1 << endl;
     cout << "Press any key to continue... " << endl;
     getch();
     return 0;
