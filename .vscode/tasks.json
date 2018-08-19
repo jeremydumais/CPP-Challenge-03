@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build exercices",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "main.cpp"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "run exercices",
+            "type": "shell",
+            "command": "a.exe"
+        }
+    ]
+}
